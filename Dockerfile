@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:14.17.0-alpine
 MAINTAINER Jell mystral7@naver.com
 
 
@@ -14,9 +14,9 @@ WORKDIR /app
 ADD ./ /app
  
 #패키지파일들 받기
-RUN npm i -g yarn && yarn
+# RUN npm i -g yarn && yarn
 
-RUN rm yarn.lock
+# RUN rm yarn.lock
 RUN yarn
 
 RUN yarn global add ts-node
@@ -24,7 +24,7 @@ RUN yarn global add ts-node
 #배포버젼으로 설정 - 이 설정으로 환경을 나눌 수 있습니다.
 ENV NODE_ENV=production
 
-EXPOSE 5000
+EXPOSE 18000
 
 #서버실행
 CMD ["yarn", "start"]

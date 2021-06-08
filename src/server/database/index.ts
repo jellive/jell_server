@@ -1,7 +1,4 @@
-import { Sequelize, Model, DataTypes, BuildOptions } from 'sequelize'
-import { HasManyGetAssociationsMixin, HasManyAddAssociationMixin,
-    HasManyHasAssociationMixin, Association, HasManyCountAssociationsMixin,
-    HasManyCreateAssociationMixin } from 'sequelize'
+import { Sequelize, Model, DataTypes } from 'sequelize'
 import {DBInfo} from '../config/database'
 
 export default class Board extends Model {
@@ -15,12 +12,12 @@ export default class Board extends Model {
 }
 
 const sequelize = new Sequelize(DBInfo.dbname, DBInfo.username, DBInfo.password, {
-    host: '175.193.0.199',
+    host: '',
     port: 53306,
     dialect: 'mariadb',
     dialectOptions: {
         useUTC: false,
-        timezone: 'Etc/GMT0',
+        timezone: 'Etc/GMT9',
     }
 })
 
