@@ -24,6 +24,12 @@ RUN yarn global add ts-node
 #배포버젼으로 설정 - 이 설정으로 환경을 나눌 수 있습니다.
 ENV NODE_ENV=production
 
+
+# set a health check
+HEALTHCHECK --interval=5s \
+            --timeout=5s \
+            CMD curl -f http://127.0.0.1:18000 || exit 1
+
 EXPOSE 18000
 
 #서버실행

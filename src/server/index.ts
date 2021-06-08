@@ -2,7 +2,7 @@ import Express from 'express'
 import mainRouter from './router'
 import bodyParser from 'body-parser'
 
-const port = 5000
+const port = 18000
 
 const dev = process.env.NODE_ENV !== 'production'
 const server = Express()
