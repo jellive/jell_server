@@ -14,15 +14,15 @@ server.set('views', __dirname + '/../views')
 server.set('view engine', 'ejs')
 server.engine('html', require('ejs').renderFile)
 
-
-server.listen(port, 'localhost', (err) => {
-    if (err) throw err
-    console.log('jell server start. port:' + port)
+server.listen(port, 'localhost', () => {
+  console.log('jell server start. port:' + port)
 })
 
-server.use(Express.static('public'));
+server.use(Express.static('public'))
 
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({
+server.use(bodyParser.json())
+server.use(
+  bodyParser.urlencoded({
     extended: true
-}));
+  })
+)
