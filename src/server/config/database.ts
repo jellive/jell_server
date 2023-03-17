@@ -1,5 +1,5 @@
 export const DBInfo = {
-  dbname: 'seoul_petpal',
-  username: 'jell',
+  dbname: process.env.DATABASE,
+  username: process.env.USERNAME,
   password: ''
 }
